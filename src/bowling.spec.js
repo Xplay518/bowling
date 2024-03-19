@@ -46,4 +46,9 @@ describe('Bowling game', () => {
     rollMany(16, 0);
     expect(g.score()).toBe(24);
   });
+
+  test('Perfect game scores 300', () => {
+    rollMany(12, 10);
+    expect(g.score()).toBe(300);
+  });
 });
