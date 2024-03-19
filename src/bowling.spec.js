@@ -3,8 +3,9 @@ const Game = require('./bowling');
 describe('Bowling game', () => {
   test('Gutter game scores 0', () => {
     const g = new Game();
-    // Agregar código de prueba para verificar el juego en caso de 0 puntos
+    for (let i = 0; i < 20; i++) {
+      g.roll(0);
+    }
+    expect(g.score()).toBe(0);
   });
-
-  // Agregar más pruebas según sea necesario para otras funcionalidades del juego
 });
