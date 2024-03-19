@@ -13,6 +13,11 @@ describe('Bowling game', () => {
     }
   };
 
+  const rollSpare = () => {
+    g.roll(5);
+    g.roll(5);
+  };
+
   test('Gutter game scores 0', () => {
     rollMany(20, 0);
     expect(g.score()).toBe(0);
@@ -21,5 +26,12 @@ describe('Bowling game', () => {
   test('All ones game scores 20', () => {
     rollMany(20, 1);
     expect(g.score()).toBe(20);
+  });
+
+  test('One spare game scores 16', () => {
+    rollSpare();
+    g.roll(3);
+    rollMany(17, 0);
+    expect(g.score()).toBe(16);
   });
 });
