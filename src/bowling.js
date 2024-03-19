@@ -1,18 +1,14 @@
 class Game {
     constructor() {
-      this.rolls = [];
+      this._score = 0; // Cambiar el nombre de la propiedad a _score para evitar conflictos
     }
   
     roll(pins) {
-      this.rolls.push(pins);
+      this._score += pins;
     }
   
     score() {
-      let score = 0;
-      for (let i = 0; i < this.rolls.length; i++) {
-        score += this.rolls[i];
-      }
-      return score;
+      return this._score;
     }
   }
   
